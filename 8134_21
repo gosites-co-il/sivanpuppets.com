@@ -6,7 +6,7 @@ var isSystemDomain = "false";
 
  function fbs_click(u, t) {
     if (!u) {
-        u = '/sivan';
+        u = '/sivanpuppets.com';
     };
 
     if (!t) {
@@ -42,13 +42,13 @@ var isSelfDelivery = false;
 var callbackUrl = null;
 var isSelfCheckout = false;
 
-var storeBaseUrl = "/sivan";
+var storeBaseUrl = "/sivanpuppets.com";
 
  window.fbAsyncInit = function () {
 
     FB.init({
         appId: '', // App ID
-        channelUrl: '/sivan/' + 'public/FbChannel', // Channel File
+        channelUrl: '/sivanpuppets.com/' + 'public/FbChannel', // Channel File
         status: true, // check login status
         cookie: true, // enable cookies to allow the server to access the session
         xfbml: true,  // parse XFBML
@@ -218,10 +218,10 @@ var storeBaseUrl = "/sivan";
     
 
 
-    window.cc_page_info.cart_url='/sivan/Cart';
-    window.cc_page_info.cart_CustomerFieldsPage_url='/sivan/CustomerFieldsPage';
+    window.cc_page_info.cart_url='/sivanpuppets.com/Cart';
+    window.cc_page_info.cart_CustomerFieldsPage_url='/sivanpuppets.com/CustomerFieldsPage';
 
-    window.cc_page_info.browser_root_url = "/sivan"; 
+    window.cc_page_info.browser_root_url = "/sivanpuppets.com"; 
     window.cc_page_info.store_is_rtl = true;
     window.cc_page_info.store_lang = 'he';
     window.cc_page_info.date_format = 'dd/MM/yyyy';

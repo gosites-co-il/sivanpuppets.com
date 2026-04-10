@@ -1,13 +1,13 @@
 """Rewrite mirrored absolute URLs for a GitHub Pages *project* site (/<repo>/...).
 
 When you later use a custom domain at the site root, replace the path prefix
-(e.g. /sivan/) with / across the tree (or re-run with GITHUB_PAGES_REPO empty
+(e.g. /sivanpuppets.com/) with / across the tree (or re-run with GITHUB_PAGES_REPO empty
 and adjust logic) so links are not under /repo/.
 """
 import os
 import sys
 
-REPO = os.environ.get("GITHUB_PAGES_REPO", "sivan")
+REPO = os.environ.get("GITHUB_PAGES_REPO", "sivanpuppets.com")
 PREFIX = f"/{REPO.strip('/')}/"
 REPLACEMENTS = [
     ("https://www.sivanpuppets.com/", PREFIX),
