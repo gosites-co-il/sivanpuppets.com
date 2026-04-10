@@ -1,0 +1,132 @@
+﻿
+.cms {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: #eee;
+    border-bottom: solid 1px #ddd;
+    color: #000;
+    box-shadow: none;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.top {
+    padding: 5px 0 40px 0;
+}
+
+.cms .top ul.menu-main > li a {
+    line-height: 20px;
+    font-size: 14px;
+    color: #000;
+}
+
+.navigation-menu.top ul {
+    background: #eee;
+}
+
+
+.top-header-container {
+    padding-top: 70px;
+    padding-bottom: 15px;
+    margin-bottom: 0px;
+}
+
+@media (min-width:769px) { /* small devices sm and higher */
+
+    .top-header-container {
+        padding-top: 80px;
+        padding-bottom: 0px;
+        margin-bottom: 0;
+    }
+}
+
+.cc-category-toolbar-head .cc-btn-filter {
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    font-weight: bold !important;
+}
+
+.list-shiping-options label {
+    display: inline;
+}
+
+.list-shiping-options li {
+    margin-bottom: 10px;
+}
+
+#checkout_dialog_cont {
+    margin-bottom: 20px;
+}
+.modal .field-validation-error {
+    font-size: 11px;
+}
+.tbl-customer-message td {
+    padding-top: 10px !important;
+}
+.tbl-customer-message input,
+.tbl-customer-message textarea {
+    font-weight: normal !important;
+}
+
+.help-text {
+    font-size: 12px;
+    line-height: 20px;
+    color: #7A7A7A;
+}
+
+    .help-text:hover {
+        color: #444;
+    }
+
+/* accesabilty border focus */
+:focus, .btn:focus {
+    /*outline: #c9c9c9 1px dotted;*/
+    outline: #727272 2px solid !important;
+}
+#checkout_dialog_cont .progress_bar a:hover {
+    text-decoration: underline !important;
+}
+.modal-content {
+    background-color: #fff !important;
+}
+.cc-share-cube-item:hover {
+    opacity: 0.7;
+}
+.bootstarpslider .glyphicon-chevron-left, .bootstarpslider .glyphicon-chevron-right {
+    text-shadow: -1px 0 #b1b1b1, 0 1px #b1b1b1, 1px 0 #b1b1b1, 0 -1px white;
+}
+.input-only-digit.steponedigits {
+    float: none !important;
+    position: relative;
+    top: 1px;
+    border: none !important;
+    border-right: solid 1px #6c757d !important;
+    border-left: solid 1px #6c757d !important;
+    width: 50px !important;
+    height: 30px !important;
+}
+.spinx.input-group .btn-minus,
+.spinx.input-group .btn-plus {
+    width: 10px;
+    text-align: center;
+    font-size: 18px;
+    background: #fff !important;
+    height: 34px !important;
+    color: #6c757d !important;
+   
+    padding: 6px !important;
+}
+
+.input-only-digit.steponedigits:focus
+{
+    outline: none !important;
+}
+.spinx.input-group {
+    border: solid 1px #6c757d !important;
+    border-radius:2px;
+}
+#cart_products_cont {
+    height: 300px;
+    /*overflow-y: scroll;*/
+}

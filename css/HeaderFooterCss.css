@@ -1,0 +1,20 @@
+.navbartop, .navbartop .sub-nav.dropdown-menu, .header-top, .header-top .dropdown-menu { background-color:  rgba(255, 255, 255, 0) !important; }
+ul.cc-TopMenu li>ul.dropdown-menu { border-color:  rgba(255, 255, 255, 0) !important; }
+.navbar-default .navbar-nav.cc-TopMenu > li > a, .navbar-nav.cc-TopMenu .dropdown-menu > li > a, .top-right ul > li > a { color:  rgb(0, 0, 0) !important; }
+.navbartop { border-bottom: solid 1px rgba(255, 255, 255, 0) !important; }
+
+.navbar-default .navbar-nav.cc-TopMenu > .active > a, .navbar-default .navbar-nav.cc-TopMenu a:hover, .navbar-default .navbar-nav.cc-TopMenu a:focus { color:  rgb(0, 0, 0) !important; }
+@media (min-width: 768px)
+{
+.main-menu-wrap, .shrink, .cc-main-menu,.header-nav, .navbar.navbar-default.top-nav, ul.cc-MainMenu li>ul.dropdown-menu { background-color:  rgb(255, 255, 255) !important; }
+.cc-MainMenu > li > a, .cc-MainMenu .dropdown-menu > li > a { color:  rgb(0, 0, 0) !important; }
+ul.cc-MainMenu li>ul.dropdown-menu, .cc-menu-row { border-color:  rgb(0, 0, 0) !important; }
+
+
+
+.cc-MainMenu > .active > a, .cc-MainMenu a:hover, .cc-MainMenu a:focus, .cc-MainMenu .dropdown-menu > li > a:hover, .cc-MainMenu .dropdown-menu > li > a:focus, .cc-MainMenu .dropdown-menu > li.active > a { color:  rgb(0, 0, 0) !important; }
+}
+.website-footer, footer, .footer, .footer-top { background-color:  rgba(237, 75, 187, 0.84) !important; }
+.website-footer h4, .website-footer h6, .footer h4, .footer h6, footer h4, footer h6 { color:  rgb(255, 255, 255) !important; }
+.cc-footer-link-text-color a, .cc-footer-link-text-color div, .footer a, .footer div, .cc-footer-link-text-color p, .footer p { color:  rgb(0, 0, 0) !important; }
+

@@ -1,0 +1,276 @@
+
+
+
+var isSystemDomain = "false";
+
+
+ function fbs_click(u, t) {
+    if (!u) {
+        u = '/sivan';
+    };
+
+    if (!t) {
+        t = 'הבובות של סיון ';
+    };
+    window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436');
+    return false;
+}
+
+var defaultShipingOption =0;
+var store_dir = "rtl";
+var is_cycle = true;
+var isPager = false;
+var facebook_leads_pixel_id = "";
+var google_leads_pixel_id = "";
+var siteVersion = "2";
+var palleteName = "1";
+var ccshopType = "default";
+
+
+
+
+
+
+
+var appid = "786093511493355";
+var appUrl = "https://stores.wobily.com/";
+var apiUrl = "https://api.wobily.com/";
+var protocol = location.protocol.replace(':', ''); 
+var lang = null;
+var isHideFirststep = false;
+var isSelfDelivery = false;
+var callbackUrl = null;
+var isSelfCheckout = false;
+
+var storeBaseUrl = "/sivan";
+
+ window.fbAsyncInit = function () {
+
+    FB.init({
+        appId: '', // App ID
+        channelUrl: '/sivan/' + 'public/FbChannel', // Channel File
+        status: true, // check login status
+        cookie: true, // enable cookies to allow the server to access the session
+        xfbml: true,  // parse XFBML
+        version    : 'v2.3'
+    });
+
+    $(document).ready(function () {
+
+        if (typeof (RenderAll) == "undefined") {
+            return false;
+        }
+
+        RenderAll();
+
+
+        setWinSize();
+
+
+        if (typeof (onFBReadyScroll) != "undefined") {
+            onFBReadyScroll.call(this, FB);
+        };
+
+        if (typeof (onFBReadyMegalike) != "undefined") {
+            onFBReadyMegalike.call(this, FB);
+        };
+
+        if (typeof (onFBReadyLikeStoreWindow) != "undefined") {
+            onFBReadyLikeStoreWindow.call(this, FB);
+        };
+
+
+        cs.DefaultSideHeight = $(".leftside").outerHeight();
+
+    })
+
+    if (typeof (onFBReady) != "undefined") {
+        onFBReady.call(this, FB);
+    };
+
+    //FB.Event.subscribe('comment.create', function (response) {
+
+    //    var commentQuery = FB.Data.query("SELECT text, fromid FROM comment WHERE post_fbid='" + response.commentID +
+    //    "' AND object_id IN (SELECT comments_fbid FROM link_stat WHERE url='" + response.href + "')");
+    //    var userQuery = FB.Data.query("SELECT name FROM user WHERE uid in (select fromid from {0})", commentQuery);
+    //    FB.Data.waitOn([commentQuery, userQuery], function () {
+    //        if (commentQuery && commentQuery.value.length > 0) {
+    //            var comment_fbid = commentQuery.value[0].fromid;
+    //            CallAjax('/tab/SendCommentNotification/', { id: comment_fbid, href: response.href }, null, null, function () {
+    //            }, function () { }, "post");
+    //        }
+    //    });
+
+    //});
+
+    FB.Event.subscribe('comment.create',
+            function (response) {
+                var source = response.href;
+                var prodid = source.substring(source.lastIndexOf("=") + 1);
+
+                cs.UpdateProductStatistic(prodid, 3, true);
+                CallAjax('/tab/SendCommentNotification/', { id: prodid }, null, null, function () {
+                }, function () { }, "post");
+            }
+        );
+
+    FB.Event.subscribe('edge.create', function (response) {
+        var source = response.href;
+        var prodid = source.substring(source.lastIndexOf("=") + 1);
+        cs.UpdateProductStatistic(prodid, 2, true);
+    });
+
+    FB.Event.subscribe('message.send',
+    function (response) {
+        var source = response.href;
+        var prodid = source.substring(source.lastIndexOf("=")) ;
+
+        cs.UpdateProductStatistic(prodid, 4, true);
+        }
+    );
+
+
+};
+
+
+
+
+
+
+        function onRender() {
+         
+        }
+
+
+        var currencySymbol = '₪';
+
+        function onFBReadyScroll() {
+       
+           
+          
+        }
+
+        var arrIds = [];
+        var haystack = [];
+        var objects = [];
+
+        function attachSuggest() {
+
+            $(".entry_form").autocomplete({
+                    source: function (request, response) {
+                        var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
+                        response($.grep(haystack, function (item) {
+                            return matcher.test(item);
+                        }));
+                    },
+                    select: function (event, ui) {
+                        onSuggestEnter(ui.item.value);
+                    },
+                    position: {
+                        my: store_dir == "rtl" ? "left top" : "right top",
+                        at: store_dir == "rtl" ? "left bottom" : "right bottom"
+                    }
+                });
+
+        }
+
+       
+
+        function onSuggestEnter(val) {
+            var index = jQuery.inArray(val, haystack);
+            var link = objects[index];
+            var id = arrIds[index];
+
+            var API = $("#mobile-menu").data("mmenu");
+            if(API) {
+                API.close();
+            }
+
+            if(!cc_ajax.isLoadPagesWithAjax) {
+                window.location = storeBaseUrl + "/p/" + link.Link;
+            }
+            else {
+                cc_ajax.loadPage(storeBaseUrl + "/p/" + link.Link); 
+            }
+        }
+
+        var istorewinlike = false;
+
+       
+
+
+
+
+
+
+
+
+// action dispatcher js.
+
+
+
+
+
+
+   if(typeof(cc_page_info) == "undefined") {
+        window.cc_page_info = {}; 
+    }
+    
+
+
+    window.cc_page_info.cart_url='/sivan/Cart';
+    window.cc_page_info.cart_CustomerFieldsPage_url='/sivan/CustomerFieldsPage';
+
+    window.cc_page_info.browser_root_url = "/sivan"; 
+    window.cc_page_info.store_is_rtl = true;
+    window.cc_page_info.store_lang = 'he';
+    window.cc_page_info.date_format = 'dd/MM/yyyy';
+    window.cc_page_info.account_lang = 'he';
+    window.cc_page_info.account_culture_name = 'he-IL';
+    window.cc_page_info.enc_account_id = 'gk8nfI0h-_4%3d';
+    window.cc_page_info.is_design_mode = false;
+    window.cc_page_info.store_currency_letters = "ILS";
+	window.cc_page_info.store_currency_symbol = '₪';
+    window.cc_page_info.store_current_lang_id = '2';
+    window.cc_page_info.ext_url = 'https://ext.wobily.com/'
+    window.cc_page_info.store_id = '8134';
+    window.cc_page_info.enc_store_id = 'hXzKjKAuVGg=';
+    window.cc_page_info.getParsedInfo = function(url) {
+        
+        if(!url) {
+            url = window.cc_page_info.url;
+        }
+
+        var objType = "";
+        var permalink = "";
+        var fullrelativeLink = ""; 
+
+        if (url.lastIndexOf("/p/") > -1) {
+            objType = "p";
+            permalink = url.substring(url.lastIndexOf("/p/") + "/p/".length);
+            fullrelativeLink = url.substring(url.lastIndexOf("/p/"));
+        } else if (url.lastIndexOf("/c/") > -1) {
+            objType = "c";
+            permalink = url.substring(url.lastIndexOf("/c/") + "/c/".length);
+            fullrelativeLink = url.substring(url.lastIndexOf("/c/"));
+        } else if (url.lastIndexOf("/sc/") > -1) {
+            objType = "sc";
+            permalink = url.substring(url.lastIndexOf("/sc/") + "/sc/".length);
+            fullrelativeLink = url.substring(url.lastIndexOf("/sc/"));
+        } else if (url.lastIndexOf("/page/") > -1) {
+            objType = "page";
+            permalink = url.substring(url.lastIndexOf("/page/") + "/page/".length);
+            fullrelativeLink = url.substring(url.lastIndexOf("/page/"));
+        }
+
+
+        return { objType : objType, permalink : permalink, fullrelativeLink : fullrelativeLink };
+
+    }
+
+
+
+
+var cc_oid =  338249;
+var cc_type="product";
+
