@@ -940,7 +940,7 @@ function onfaceboxClose() {
 
 function GetCartPreviewContainers(isNotincCheckout) {
 
-    var html = '<div style="width:250px;"><label>' + Resources.CartPreview + '</label></div>' + '<div class="popoverContainer"><div style="text-align:center; padding:10px;"><img src="https://cdnw.wobily.com/system/loading.svg"/></div></div>';
+    var html = '<div style="width:250px;"><label>' + Resources.CartPreview + '</label></div>' + '<div class="popoverContainer"><div style="text-align:center; padding:10px;"><img src="images/_remote/c04e6347149a238d8f24173d.svg"/></div></div>';
 
     return html;
 
@@ -951,7 +951,7 @@ function GetCheckoutContainers(isNotincCheckout) {
     var checkout_cont_suffix = "";
 
     if (!isNotincCheckout) {
-        checkout_cont = '<div class="textAlignLang" id="checkout_container"><div id="checkout_dialog_cont" class="cartstep"><div style="text-align:center; padding:10px;"><img src="https://cdnw.wobily.com/system/loading.svg"/></div></div>';
+        checkout_cont = '<div class="textAlignLang" id="checkout_container"><div id="checkout_dialog_cont" class="cartstep"><div style="text-align:center; padding:10px;"><img src="images/_remote/c04e6347149a238d8f24173d.svg"/></div></div>';
         checkout_cont_suffix = "</div>";
     }
 
@@ -1567,7 +1567,7 @@ var cs = function () {
             if (that.State == 0) {
                 that.State = 1; // progress
 
-                var loading = $("<div id='loading_products'/>").html("<img src='https://cdnw.wobily.com/system/loading.svg'/>");
+                var loading = $("<div id='loading_products'/>").html("<img src='images/_remote/c04e6347149a238d8f24173d.svg'/>");
                 $("#innerstore").append(loading[0]);
 
                 CallAjax(url, { page: that.Counter, context: storeContext, isPreview: isPreview, IsPagerMode: overrideIsPagerMode ? true : isPager }, null, null, function (msg) {
@@ -2600,7 +2600,7 @@ var cs = function () {
                 return;
             }
             if (isMobile) {
-                document.write('<img style="margin:auto;display: block;" src="https://cdnw.wobily.com/system/loading.svg"/>');
+                document.write('<img style="margin:auto;display: block;" src="images/_remote/c04e6347149a238d8f24173d.svg"/>');
             }
             else {
                 $("#checkout_container").mask(Resources.ConfirmOrder + "...");
@@ -2664,7 +2664,7 @@ var cs = function () {
                 '<input type="button" class="button" tabindex="10" value="' + Resources.CloseAndContinueBuying + '" onclick="$(\'.close_image\').click()"/> <input type="button" class="button continue diag-pay-now" tabindex="11"  onclick="checkout(true)"  value="' + T.Global.SecurePayment + '"/>' +
                 '</div>' +
                 '<div class="left">' +
-                '<img class="secure-img" alt="Secure payment" src="https://cdnw.wobily.com/system/SECURE-PAYMENT-BLACK.png" />' +
+                '<img class="secure-img" alt="Secure payment" src="images/_remote/684a1513c4ed9a1da71f4285.png" />' +
                 '</div>' +
                 '<div class="clear"></div>' +
                 '</div>';
@@ -4489,7 +4489,7 @@ function getZoomSettings() {
         scrollZoom: true,
         //zoomType: Lens,
         //lensSize: 1000,
-        loadingIcon: "https://cdnw.wobily.com/system/loading.svg",
+        loadingIcon: "images/_remote/c04e6347149a238d8f24173d.svg",
         zoomLevel: 0.5
 
     }
@@ -5119,7 +5119,7 @@ function RunAPIPickupPointsContainers() {
     var pickup_points_cont = "";
     var checkout_cont_suffix = "";
 
-    pickup_points_cont = '<div class="textAlignLang" id="run_pickup_points_container"><div id="run_pickup_points_dialog_cont"><div style="text-align:center; padding:10px;"><img src="https://cdnw.wobily.com/system/loading.svg"/></div></div>';
+    pickup_points_cont = '<div class="textAlignLang" id="run_pickup_points_container"><div id="run_pickup_points_dialog_cont"><div style="text-align:center; padding:10px;"><img src="images/_remote/c04e6347149a238d8f24173d.svg"/></div></div>';
     pickup_points_cont_suffix = "</div>";
     var html = pickup_points_cont + checkout_cont_suffix;
 
@@ -5130,7 +5130,7 @@ function PopAttrContainers() {
     var pickup_points_cont = "";
     var checkout_cont_suffix = "";
 
-    pickup_points_cont = '<div class="textAlignLang" id="popup_attr_container"><div id="popup_attr_dialog_cont"><div style="text-align:center; padding:10px;"><img src="https://cdnw.wobily.com/system/loading.svg"/></div></div>';
+    pickup_points_cont = '<div class="textAlignLang" id="popup_attr_container"><div id="popup_attr_dialog_cont"><div style="text-align:center; padding:10px;"><img src="images/_remote/c04e6347149a238d8f24173d.svg"/></div></div>';
     popup_attr_cont_suffix = "</div>";
     var html = pickup_points_cont + checkout_cont_suffix;
 
@@ -6074,7 +6074,7 @@ var cp = function () {
                 if (win && win.document) {
                     if (win.document.body) {
                         win.document.body.style.cursor = "wait";
-                        win.document.body.innerHTML = "<br/><br/><div style='text-align:center;'><b>Please wait...</b><br/><img src='https://cdnw.wobily.com/system/loading.svg'/></div>";
+                        win.document.body.innerHTML = "<br/><br/><div style='text-align:center;'><b>Please wait...</b><br/><img src='images/_remote/c04e6347149a238d8f24173d.svg'/></div>";
                     }
                 }
             
