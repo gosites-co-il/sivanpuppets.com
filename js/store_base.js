@@ -4225,6 +4225,21 @@ function isSupportCookies() {
 }
 
 $(document).ready(function () {
+    function tryInitMobileMmenu() {
+        try {
+            if (typeof $.fn.mmenu !== "function" || isMMenurendered || !$(".cc-MainMenu").length) {
+                return;
+            }
+            if (typeof T === "undefined" || !T.Global) {
+                return;
+            }
+            initMMenu();
+        } catch (ex) { }
+    }
+    tryInitMobileMmenu();
+    setTimeout(tryInitMobileMmenu, 100);
+    setTimeout(tryInitMobileMmenu, 500);
+
     $('.cc-navigation .dropdown-toggle').on("click.cc", function (e) {
         var href = $(this).attr('href');
         if (cc_ajax.isLoadPagesWithAjax) {
@@ -4251,7 +4266,24 @@ $(document).ready(function () {
 
     $(".navbar-toggle,.side-navigation-button").on("click.menu", function (e) {
         var API = $("#mobile-menu").data("mmenu");
-        API.open();
+        if (API) {
+            API.open();
+            e.preventDefault();
+            return false;
+        }
+        var $collapse = $("#bs-example-navbar-collapse-1");
+        if ($collapse.length) {
+            if (typeof $collapse.collapse === "function") {
+                $collapse.collapse("toggle");
+            } else {
+                $collapse.toggleClass("in");
+                if ($collapse.hasClass("in")) {
+                    $collapse.css({ height: "auto", "max-height": "none", overflow: "visible" });
+                } else {
+                    $collapse.css({ height: "", "max-height": "", overflow: "" });
+                }
+            }
+        }
         e.preventDefault();
         return false;
     });
